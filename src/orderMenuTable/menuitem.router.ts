@@ -6,7 +6,7 @@ export const menuitem = new Hono()
 
 menuitem.get("/menuitem",ordermenustate)
 
-menuitem.get("menuitem",getordermenustate)
+menuitem.get("/menuitem/:id",getordermenustate)
 
 menuitem.post("/menuinsert",zValidator("json",menuI,(result,c)=>{
     if(!result.success){

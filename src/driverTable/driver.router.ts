@@ -1,12 +1,13 @@
 import { Hono } from 'hono'
 import {zValidator} from "@hono/zod-validator"
 import { driverVAL } from '../validator'
+import { driverAuth } from '../middleware/bearAuth'
 import{ driverstate,getdriverstate,createdrivers,updatedrivers,deletedrivers   }from './driver.controller'
 export const driver = new Hono()
 
-driver.get("/driver",driverstate)
+driver.get("/driver",driverAuth,driverstate)
 
-driver.get("driver",getdriverstate)
+driver.get("/driver/:id",getdriverstate)
 
 driver
 .post("/driverinsert",zValidator("json",driverVAL,(result,c)=>{
@@ -15,6 +16,6 @@ driver
     }
 }),createdrivers)
 
-driver.put("/updatedriver",updatedrivers)
+driver.put("/updatedriver/:id",updatedrivers)
 
-driver.delete("/deletedriver",deletedrivers)
+driver.delete("/deletedriver/:id",deletedrivers)

@@ -14,6 +14,6 @@ city.post("cityinsert",zValidator("json",cityval,(result,c)=>{
     }
 }),createcities)
 
-city.put("/city/:id",updatecities)
+city.put("/cityupdate/:id",updatecities)
 
-city.delete("/city/:id",updatecities)
+city.delete("/citydelte/:id",updatecities)

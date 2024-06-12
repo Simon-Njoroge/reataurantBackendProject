@@ -7,6 +7,7 @@ import { integer } from "drizzle-orm/pg-core"
 import { relations } from "drizzle-orm"
 import{pgTable, serial,varchar} from "drizzle-orm/pg-core"
 import { Many } from "drizzle-orm"
+import { MySqlVarCharBuilder } from "drizzle-orm/mysql-core"
 export const cityTable= pgTable("cityTable",{
     cityid: serial("id").primaryKey(),
     cityname: varchar("name",{length:256}).notNull(),
@@ -71,8 +72,8 @@ export const addressTable= pgTable("addressTable",{
     instructions:varchar("instructions",{length:100}).notNull(),
     user_id:varchar("user_id",{length:20}),
     city_id:integer("city_id").references(()=>cityTable.cityid,{onDelete:"cascade"}),
-    created_at:timestamp("created_at").notNull(),
-    updated_at:timestamp("updated_at").notNull(),
+    created_at:varchar("created_at",{length:20}).notNull(),
+    updated_at:varchar("updated_at",{length:20}).notNull(),
     city:varchar("city",{length:100}).notNull(),
     users:varchar("users",{length:256}),
     order:varchar("order",{length:20}),
@@ -101,8 +102,8 @@ export const commentsTable= pgTable("commentsTable",{
     comments: varchar("carMake",{length:100}).notNull(),
     complaint: varchar("carModel",{length:100}).notNull(),
     praise:varchar("carYear",{length:100}).notNull(),
-    created_at:timestamp("created_at").notNull(),
-    updated_at:timestamp("updated_at").notNull(),
+    created_at:varchar("created_at",{length:20}).notNull(),
+    updated_at:varchar("updated_at",{length:20}).notNull(),
     users:varchar("users",{length:256}),
     order:varchar("order",{length:20}),
 })
@@ -161,8 +162,8 @@ export const ordersTable= pgTable("orderTable",{
     id: serial("id").primaryKey(),
     restaurantId:integer("restaurantId").references(()=>restaurantTable.id,{onDelete:"cascade"}),
     statusCatalogId:integer("statusCatalogId"),
-    estimateddelivery:timestamp("estimateddelivery"),
-    actualdelivery:timestamp("estimateddelivery"),
+    estimateddelivery:varchar("estimateddelivery",{length:100}),
+    actualdelivery:varchar("actualdelivery",{length:100}),
     deliveryAddressId:integer("ddeliveryAddressId").references(()=>addressTable.id,{onDelete:"cascade"}),
     userId:integer("userId").references(()=>usersTable.id,{onDelete:"cascade"}),
     driverId:integer("driverId").references(()=>driverTable.id,{onDelete:"cascade"}),
@@ -191,7 +192,7 @@ export const statecityrelations = relations(stateTable,({one,many})=>({
 orders:many(cityTable)
 }))
 
-export const restaurantralations= relations(restaurantTable,({one})=>({
+export const restaurantralation= relations(restaurantTable,({one})=>({
 orderStatus:one(cityTable,{
 fields:[restaurantTable.city_id],
 references:[cityTable.cityid]
@@ -242,7 +243,7 @@ export const ordersrelations = relations(ordersTable,({one,many})=>({
     order:many(orderStatusTable)
 }))
 
-export const roleEnum =pgEnum("role",["admin","owner"])
+export const roleEnum =pgEnum("role",["admin","owner","driver","chef"])
 export const authrestaurantOwner=pgTable("authonowner",{
     id:serial("id").primaryKey(),
     ownerid:integer("ownerid").references(()=>restaurant_owner.id,{onDelete:"cascade"}),

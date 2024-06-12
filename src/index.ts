@@ -11,9 +11,11 @@ import {orders} from './ordeTable/orders.router'
 import {menuitem} from './orderMenuTable/menuitem.router'
 import{city} from './cityTable/city.router'
 import {menu} from './menuItemTable/menu.router'
-import {driver} from './driverTable/user.router'
+import {driver} from './driverTable/driver.router'
 import{comment} from './commentsTable/comments.router'
+import {category} from './categoryTable/category.router'
 import{authRouter} from './auth/auth.router'
+import{address} from './adressTable/address.router'
 import {verifyToken} from './middleware/bearAuth'
 const app = new Hono()
 app.use(logger())
@@ -36,6 +38,8 @@ app.route("/api",driver)
 app.route("/api",city)
 app.route("/api",comment)
 app.route("/api/auth",authRouter)
+app.route("/api",category)
+app.route("/api",address)
 const port =3000
 console.log(`Server is running on port 3000`)
 

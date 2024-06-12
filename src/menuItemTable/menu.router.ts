@@ -14,6 +14,6 @@ menu.post("/iteminsert",zValidator("json",menu2,(result,c)=>{
     }
 }),createmenuitems)
 
-menu.put("/updateitem",updatemnuitems)
+menu.put("/updateitem/:id",updatemnuitems)
 
-menu.delete("/deleteitem",deletemenuitems)
+menu.delete("/deleteitem/:id",deletemenuitems)

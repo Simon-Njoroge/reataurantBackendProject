@@ -6,42 +6,102 @@ GET http://localhost:3000/api/user
 ###
 
 GET http://localhost:3000/api/owner
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJTSU1PTiIsInJvbGUiOiJvd25lciIsIm93bmVyaWQiOjEsImV4cCI6MTcxODE2MTE3OH0.9_Rfj2eK-Ww0yvP98Aq_IbXXzIH3o5norz6Fvw9_Ofw
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODIxMDMzMH0.fbuNJmgYhD9Aj6tDsO-iWjkcRNMaHjyjeRhSBPKBqio
 
+###
 POST  http://localhost:3000/api/ownerinsert
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODIxMDMzMH0.fbuNJmgYhD9Aj6tDsO-iWjkcRNMaHjyjeRhSBPKBqio
 Content-Type: application/json
 
  {
     "id": 7,
+    "restaurant_id": 2,
+    "owner_id": 1,
+    "users": "JANE",
+    "restaurant": "CLIFNECK"
+  }
+###
+PUT   http://localhost:3000/api/ownerupdate/5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODE4NzUzN30.TNnDlZ5EWu_QFlB2yG9yLQmCJQps-PG_mwYoDEGZbS0
+Content-Type: application/json
+
+ {
+    "id": 5,
     "restaurant_id": 1,
     "owner_id": 1,
-    "users": "KELVIN",
-    "restaurant": "MAANET"
+    "users": "JANE NJOROGE",
+    "restaurant": "CLIFNECK"
   }
 
 ###
+DELETE  http://localhost:3000/api/ownerdelete/5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODE4NzUzN30.TNnDlZ5EWu_QFlB2yG9yLQmCJQps-PG_mwYoDEGZbS0
+Content-Type: application/json
+
+ {
+    "id": 5,
+    "restaurant_id": 1,
+    "owner_id": 1,
+    "users": "JANE NJOROGE",
+    "restaurant": "CLIFNECK"
+  }
+###
 GET http://localhost:3000/api/order
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODIxMDMzMH0.fbuNJmgYhD9Aj6tDsO-iWjkcRNMaHjyjeRhSBPKBqio
 
 ###
+GET http://localhost:3000/api/order/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJzaW1vbiIsInJvbGUiOiJvd25lciIsIm93bmVyaWQiOjEsImV4cCI6MTcxODIxMDIxNn0.PNMJESThkiWCSVFel_eXnzgtSgQzGxVYkwjHJmBD4cI
+###
 POST  http://localhost:3000/api/orderinsert
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODIwMDUwMH0.iV-j_TN7awe8Z1JJ-Ps-_bMupA1Rms-w-gjE4cnTiLk
+Content-Type: application/json
+
+ {
+    "id": 2,
+    "restaurantId": 1,
+    "statusCatalogId": 1,
+    "estimateddelivery": "2023",
+    "actualdelivery": "2024-04-04",
+    "deliveryAddressId": 1,
+    "userId": 1,
+    "driverId": 4,
+    "price": "1000",
+    "discount": "100",
+    "finalPrice": "900",
+    "created_at": "2016-03-06",
+    "updated_at": "2024-04-02",
+    "comment": "good",
+    "orderMenuItem": "🥞 pancakes",
+    "orderStatus": "good",
+    "address": "433",
+    "driver": "simon",
+    "restaurant": "bekam",
+    "user": "jane"
+  }
+ 
+
+###
+PUT   http://localhost:3000/api/orderupdate/4
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODE4NzUzN30.TNnDlZ5EWu_QFlB2yG9yLQmCJQps-PG_mwYoDEGZbS0
 Content-Type: application/json
 
   {
-    "id": 9,
+    "id": 4,
     "restaurantId": 2,
     "statusCatalogId": 1,
     "estimateddelivery": "2024-04-04",
     "actualdelivery": "2024-04-04",
     "deliveryAddressId": 1,
     "userId": 1,
-    "driverId": 12,
+    "driverId": 1,
     "price": "100",
     "discount": "10",
     "finalPrice": "90",
     "created_at": "2018-02-02",
     "updated_at": "2019-02-02",
     "comment": "GOOD",
-    "orderMenuItem": "CAR",
+    "orderMenuItem": "CARS",
     "orderStatus": "GOOD",
     "address": "433",
     "driver": "BRIAN",
@@ -50,46 +110,62 @@ Content-Type: application/json
   }
 ###
 GET http://localhost:3000/api/menuitem
+Authorization: 
+
 
 ###
-GET http://localhost:3000/api/menu/:id
-
+GET http://localhost:3000/api/menuitem/1
+Authorization: 
 ###
 POST http://localhost:3000/api/menuinsert
+Authorization: 
 Content-Type: application/json
 
-  {
-    "id": 5,
-    "restaurantId": 1,
-    "statusCatalogId": 1,
-    "estimateddelivery": "2024-06-06T00:00:00.000Z",
-    "actualdelivery": "2024-06-06T00:00:00.000Z",
-    "deliveryAddressId": null,
-    "userId": 1,
-    "driverId": 2,
-    "price": "100",
-    "discount": "10",
-    "finalPrice": "90",
-    "created_at": "2018-04-05",
-    "updated_at": "2022-09-09",
-    "comment": "FAIR",
-    "orderMenuItem": "BEANS",
-    "orderStatus": "GOOD",
-    "address": "433",
-    "driver": "SIMON NJOROGE",
-    "restaurant": "BEKAM",
-    "user": "JANE WAMBUI"
-  }
+{
+  "id": 2,
+  "orderId": 4,
+  "menuItemid": 1,
+  "quantity": 1,
+  "itemPrice": "20000",
+  "price": "10000",
+  "comment": "GOOD",
+  "menuItem": "githeri",
+  "order": "ONE"
+}
+ 
+###
+PUT http://localhost:3000/api/menuupdate/1
+Authorization: 
+Content-Type: application/json
+
+ 
+{
+  "id": 2,
+  "orderId": 4,
+  "menuItemid": 1,
+  "quantity": 1,
+  "itemPrice": "20000",
+  "price": "10000",
+  "comment": "GOOD",
+  "menuItem": "githeri",
+  "order": "two"
+}
 
 ###
 GET http://localhost:3000/api/menu
+Authorization: 
+
+###
+GET http://localhost:3000/api/menu/1
+Authorization: 
 
 ###
 POST  http://localhost:3000/api/iteminsert
+Authorization: 
 Content-Type: application/json
 
  {
-    "id": 2,
+    "id": 4,
     "restaurantid": 1,
     "categoryid": 1,
     "descriptions": "BENZ",
@@ -104,14 +180,39 @@ Content-Type: application/json
   }
 
 ###
+PUT   http://localhost:3000/api/updateitem/3
+Authorization: 
+Content-Type: application/json
+
+ {
+    "id": 3,
+    "restaurantid": 1,
+    "categoryid": 1,
+    "descriptions": "BENZ",
+    "ingredients": "MERCEDES",
+    "price": "10000000",
+    "active": true,
+    "created_at": "2014-01-12T00:00:00.000Z",
+    "updated_at": "2018-04-04T00:00:00.000Z",
+    "category": "CAR",
+    "restaurant": "MAANET",
+    "orderMenu": "ORDERED"
+  }
+###
 GET http://localhost:3000/api/driver
+Authorization: iJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqb3ljZSIsInJvbGUiOiJkcml2ZXIiLCJvd25lcmlkIjoxLCJleHAiOjE3MTgyMTA4NjF9.rtAdC_MwZIoTBRoNuZFFYUvonTCnHuVeXVmQLrvoYGo
+
+###
+GET http://localhost:3000/api/driver/2
+Authorization: 
 
 ###
 POST  http://localhost:3000/api/driverinsert
+Authorization: 
 Content-Type: application/json
 
 {
-  "id": 4,
+  "id": 6,
     "carMake": "toyota",
     "carModel": "prado",
     "carYear": "2030",
@@ -122,10 +223,34 @@ Content-Type: application/json
     "delivering": "2035",
     "created_at": "2022-04-11",
     "updated_at": "2024-04-03",
-    "users": "Caleb",
+    "users": "SONITAH",
+    "order": "Three"
+  }
+###
+PUT   http://localhost:3000/api/updatedriver/5
+Authorization: 
+Content-Type: application/json
+
+{
+  "id": 5,
+    "carMake": "toyota",
+    "carModel": "prado tx",
+    "carYear": "2030",
+    "instructions": "logboook",
+    "user_id": 1,
+    "city_id": 2,
+    "online": "true",
+    "delivering": "2035",
+    "created_at": "2022-04-11",
+    "updated_at": "2024-04-03",
+    "users": "SONITAH",
     "order": "Three"
   }
 
+  ###
+DELETE   http://localhost:3000/api/updatedriver/5
+Authorization: 
+Content-Type: application/json
 ###
 GET http://localhost:3000/api/time
 
@@ -135,28 +260,56 @@ http://localhost:3000/api/time
 
 ###
 GET http://localhost:3000/api/city
+Authorization: 
 
 ###
 GET http://localhost:3000/api/city/1
+Authorization: 
 
 ###
 POST http://localhost:3000/api/cityinsert
+Authorization: 
 Content-Type: application/json
 
 {
   "cityid": 4,
   "cityname": "mombasa",
-  "state_id": 2,
+  "state_id": 1,
   "address": "456",
   "state": "watamu",
   "restaurant": "gecko"
 }
 
 ###
+PUT  http://localhost:3000/api/cityupdate/4
+Authorization: 
+Content-Type: application/json
+
+{
+  "cityid": 4,
+  "cityname": "Kilifi",
+  "state_id": 1,
+  "address": "456",
+  "state": "watamu",
+  "restaurant": "gecko"
+}
+
+###
+DELETE http://localhost:3000/api/cityupdate/4
+Authorization: 
+Content-Type: application/json
+
+###
 GET http://localhost:3000/api/comment
+Authorization: 
+
+###
+GET http://localhost:3000/api/comment/1
+Authorization: 
 
 ###
 POST http://localhost:3000/api/commentinsert
+Authorization: 
 Content-Type: application/json
 
 {
@@ -166,21 +319,135 @@ Content-Type: application/json
     "comments": "mercedes",
     "complaint": "mercedes",
     "praise": "2025",
-    "created_at": "2018-01-12T00:00:00.000Z",
-    "updated_at": "2024-02-02T00:00:00.000Z",
+    "created_at": "2018-01-12",
+    "updated_at": "2024-02-02",
     "users": "jane",
     "order": "car"
   }
+
+
+###
+PUT  http://localhost:3000/api/comment/2
+Authorization: 
+Content-Type: application/json
+
+{
+    "id": 2,
+    "orderid": 1,
+    "userid": 1,
+    "comments": "Good",
+    "complaint": "mercedes",
+    "praise": "2025",
+    "created_at": "2018-01-12",
+    "updated_at": "2024-02-02",
+    "users": "jane",
+    "order": "car"
+  }
+###
+DELETE http://localhost:3000/api/comment/2
+Authorization: 
+Content-Type: application/json
+
+###
+GET http://localhost:3000/api/category
+Authorization: 
+
+###
+GET http://localhost:3000/api/category/1
+Authorization: 
+
+###
+POST http://localhost:3000/api/categoryinsert
+Authorization: 
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "VEGITABLES",
+  "menuItem": "KALES"
+}
+
+###
+PUT http://localhost:3000/api/categoryupdate/3
+Authorization: 
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "VEGITABLES",
+  "menuItem": "SPINACH"
+}
+
+###
+DELETE  http://localhost:3000/api/categorydelete/3
+Authorization: 
+Content-Type: application/json
+
+###
+GET http://localhost:3000/api/address
+Authorization: 
+
+
+###
+GET http://localhost:3000/api/address/1
+Authorization: 
+
+
+###
+POST  http://localhost:3000/api/addressinsert
+Authorization: 
+Content-Type: application/json
+
+{
+  "id": 1,
+  "address1": "400",
+  "address2": "435",
+  "zip_code": "900",
+  "instructions": "PLEASE DELIVER",
+  "user_id": "1",
+  "city_id": 2,
+  "created_at": "2018-12-12",
+  "updated_at": "2023-12-03",
+  "city": "NANDI",
+  "users": "PHILIP DOE",
+  "order": "FOUR"
+}
+
+###
+PUT  http://localhost:3000/api/addressupdate/1
+Authorization: 
+Content-Type: application/json
+
+
+{
+  "id": 1,
+  "address1": "400",
+  "address2": "433",
+  "zip_code": "900",
+  "instructions": "PLEASE DELIVER PLEASE",
+  "user_id": "1",
+  "city_id": 2,
+  "created_at": "2018-12-12",
+  "updated_at": "2023-12-03",
+  "city": "KIAMBU",
+  "users": "SIMON DOE",
+  "order": "ONE"
+}
+
+###
+DELETE  http://localhost:3000/api/addressdelete/1
+Authorization:
+
 
 ###
 POST  http://localhost:3000/api/auth/register
 Content-Type: application/json
 
 {
-  "ownerid": 6,
-   "ownername": "james",
+  "ownerid": 7,
+   "ownername": "nancy",
    "password": "owner",
-   "role":"admin"
+   "role":"chef"
 }
 
 ###
@@ -188,6 +455,6 @@ POST  http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-   "ownername": "SIMON",
+   "ownername": "joyce",
    "password": "owner"
 }

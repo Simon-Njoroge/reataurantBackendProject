@@ -1,4 +1,5 @@
-import { z } from "zod"
+import { string, z } from "zod"
+
  export const resraurantO =z.object({
     id:z.number(),
     restaurant_id:z.number(),
@@ -94,6 +95,25 @@ import { z } from "zod"
    order:z.string()
   })
 
+  export const addressVAL = z.object({
+   id:z.number() ,
+   address1: z.string(),
+   address2:z.string() ,
+   zip_code:z.string() ,
+   instructions: z.string(),
+   user_id:z.string() ,
+   city_id:z.number() ,
+   created_at:z.string() ,
+   updated_at: z.string() ,
+   city: z.string() ,
+   users: z.string() ,
+   order:z.string() 
+   })
+export const categoryVAL = z.object({
+   id: z.number(),
+    name:z.string() ,
+    menuItem: z.string()
+    })
   export const loginrestaurantschema= z.object({
    ownername: z.string(),
    password: z.string()
