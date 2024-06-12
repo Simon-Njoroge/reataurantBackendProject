@@ -1,0 +1,193 @@
+GET http://localhost:3000/
+
+###
+GET http://localhost:3000/api/user
+
+###
+
+GET http://localhost:3000/api/owner
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJTSU1PTiIsInJvbGUiOiJvd25lciIsIm93bmVyaWQiOjEsImV4cCI6MTcxODE2MTE3OH0.9_Rfj2eK-Ww0yvP98Aq_IbXXzIH3o5norz6Fvw9_Ofw
+
+POST  http://localhost:3000/api/ownerinsert
+Content-Type: application/json
+
+ {
+    "id": 7,
+    "restaurant_id": 1,
+    "owner_id": 1,
+    "users": "KELVIN",
+    "restaurant": "MAANET"
+  }
+
+###
+GET http://localhost:3000/api/order
+
+###
+POST  http://localhost:3000/api/orderinsert
+Content-Type: application/json
+
+  {
+    "id": 9,
+    "restaurantId": 2,
+    "statusCatalogId": 1,
+    "estimateddelivery": "2024-04-04",
+    "actualdelivery": "2024-04-04",
+    "deliveryAddressId": 1,
+    "userId": 1,
+    "driverId": 12,
+    "price": "100",
+    "discount": "10",
+    "finalPrice": "90",
+    "created_at": "2018-02-02",
+    "updated_at": "2019-02-02",
+    "comment": "GOOD",
+    "orderMenuItem": "CAR",
+    "orderStatus": "GOOD",
+    "address": "433",
+    "driver": "BRIAN",
+    "restaurant": "MAANET",
+    "user": "JOYCE"
+  }
+###
+GET http://localhost:3000/api/menuitem
+
+###
+GET http://localhost:3000/api/menu/:id
+
+###
+POST http://localhost:3000/api/menuinsert
+Content-Type: application/json
+
+  {
+    "id": 5,
+    "restaurantId": 1,
+    "statusCatalogId": 1,
+    "estimateddelivery": "2024-06-06T00:00:00.000Z",
+    "actualdelivery": "2024-06-06T00:00:00.000Z",
+    "deliveryAddressId": null,
+    "userId": 1,
+    "driverId": 2,
+    "price": "100",
+    "discount": "10",
+    "finalPrice": "90",
+    "created_at": "2018-04-05",
+    "updated_at": "2022-09-09",
+    "comment": "FAIR",
+    "orderMenuItem": "BEANS",
+    "orderStatus": "GOOD",
+    "address": "433",
+    "driver": "SIMON NJOROGE",
+    "restaurant": "BEKAM",
+    "user": "JANE WAMBUI"
+  }
+
+###
+GET http://localhost:3000/api/menu
+
+###
+POST  http://localhost:3000/api/iteminsert
+Content-Type: application/json
+
+ {
+    "id": 2,
+    "restaurantid": 1,
+    "categoryid": 1,
+    "descriptions": "BENZ",
+    "ingredients": "MERCEDES",
+    "price": "1000000",
+    "active": true,
+    "created_at": "2014-01-12T00:00:00.000Z",
+    "updated_at": "2018-04-04T00:00:00.000Z",
+    "category": "CAR",
+    "restaurant": "MAANET",
+    "orderMenu": "ORDERED"
+  }
+
+###
+GET http://localhost:3000/api/driver
+
+###
+POST  http://localhost:3000/api/driverinsert
+Content-Type: application/json
+
+{
+  "id": 4,
+    "carMake": "toyota",
+    "carModel": "prado",
+    "carYear": "2030",
+    "instructions": "logboook",
+    "user_id": 1,
+    "city_id": 2,
+    "online": "true",
+    "delivering": "2035",
+    "created_at": "2022-04-11",
+    "updated_at": "2024-04-03",
+    "users": "Caleb",
+    "order": "Three"
+  }
+
+###
+GET http://localhost:3000/api/time
+
+###
+http://localhost:3000/api/time
+
+
+###
+GET http://localhost:3000/api/city
+
+###
+GET http://localhost:3000/api/city/1
+
+###
+POST http://localhost:3000/api/cityinsert
+Content-Type: application/json
+
+{
+  "cityid": 4,
+  "cityname": "mombasa",
+  "state_id": 2,
+  "address": "456",
+  "state": "watamu",
+  "restaurant": "gecko"
+}
+
+###
+GET http://localhost:3000/api/comment
+
+###
+POST http://localhost:3000/api/commentinsert
+Content-Type: application/json
+
+{
+    "id": 2,
+    "orderid": 1,
+    "userid": 1,
+    "comments": "mercedes",
+    "complaint": "mercedes",
+    "praise": "2025",
+    "created_at": "2018-01-12T00:00:00.000Z",
+    "updated_at": "2024-02-02T00:00:00.000Z",
+    "users": "jane",
+    "order": "car"
+  }
+
+###
+POST  http://localhost:3000/api/auth/register
+Content-Type: application/json
+
+{
+  "ownerid": 6,
+   "ownername": "james",
+   "password": "owner",
+   "role":"admin"
+}
+
+###
+POST  http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+   "ownername": "SIMON",
+   "password": "owner"
+}
