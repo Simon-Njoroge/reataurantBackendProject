@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm" 
-import db from '../drizzle/db'
+import {db} from '../drizzle/db'
 import { restaurant_owner , TIrestaurantowner} from "../drizzle/schema"
 
 export const restaurantownerservice = async (limit?:  number) => {

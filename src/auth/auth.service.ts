@@ -1,5 +1,5 @@
 import{authrestaurantOwner,TIauthresowner,TSauthresowner} from '../drizzle/schema'
-import db from '../drizzle/db'
+import {db} from '../drizzle/db'
 import {sql} from "drizzle-orm"
 
 export const createownerauthservice = async (owners: TIauthresowner): Promise< string | null> => {

@@ -1,5 +1,5 @@
 import { eq } from "drizzle-orm" 
-import db from '../drizzle/db'
+import {db} from '../drizzle/db'
 import {  cityTable, TIcity} from "../drizzle/schema"
 
 export const cityservice = async (limit?: number)=>{
