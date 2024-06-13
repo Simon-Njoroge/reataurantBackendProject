@@ -16,6 +16,7 @@ import{comment} from './commentsTable/comments.router'
 import {category} from './categoryTable/category.router'
 import{authRouter} from './auth/auth.router'
 import{address} from './adressTable/address.router'
+import {html,raw} from 'hono/html'
 import {verifyToken} from './middleware/bearAuth'
 const app = new Hono()
 app.use(logger())
@@ -23,7 +24,12 @@ app.use(csrf())
 app.use(trimTrailingSlash())
 app.use('/api/time',timeout(5000))
 app.get('/', (c) => {
-  return c.text('Hello Hono!')
+  return c.json({message:"server is running ..."},200)
+})
+app.get("/running",(c)=>{
+  return c.html(html`<h1>OUR SERVER IS RUNNING</h1>
+<p>Server is running on port 3000</p>
+<P><i>use the resources provided</i></P>`)
 })
 app.get('/api/time', async(c)=>{
   await setTimeout(()=>{
