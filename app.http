@@ -1,7 +1,7 @@
-GET http://localhost:3000/
+GET http://localhost:3000/running
 
 ###
-GET http://localhost:3000/api/user
+GET http://localhost:3000/
 
 ###
 
