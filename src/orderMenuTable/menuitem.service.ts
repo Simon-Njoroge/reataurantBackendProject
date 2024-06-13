@@ -12,7 +12,8 @@ export const ordermenuservice = async (limit?: number)=>{
 }
 export const getordermenuservice =async(id: number)=>{
     return await db.query.orderMenuTable.findFirst({
-        where: eq(orderMenuTable.id,id)
+        where: eq(orderMenuTable.id,id),
+        
     })
  }
 

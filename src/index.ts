@@ -46,10 +46,10 @@ app.route("/api",comment)
 app.route("/api/auth",authRouter)
 app.route("/api",category)
 app.route("/api",address)
-const port =3000
-console.log(`Server is running on port 3000`)
 
 serve({
   fetch: app.fetch,
   port: Number(process.env.PORT)
 })
+console.log(`Server is running on port ${process.env.PORT}`)
+
