@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsx watch ./src/index.ts",
-    "start": " pnpm run build && node dist/index.js",
+    "start": " node dist/index.js",
     "studio": "drizzle-kit studio",
     "push": "drizzle-kit push"
   },
