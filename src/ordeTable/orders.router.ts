@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import{  orderstablestate, getordersstate,createorders ,updateorders,deleteorders}from './orders.controller'
+import{  orderstablestate,getorderstableservicefulls ,getordersstate,createorders ,updateorders,deleteorders}from './orders.controller'
 import {zValidator} from "@hono/zod-validator"
 import {adminAuth, bothauth, userAuth} from '../middleware/bearAuth'
 import {order} from '../validator'
@@ -7,9 +7,9 @@ export const orders = new Hono()
 
 orders.get("/order",adminAuth,orderstablestate)
 
-orders.get("/order",userAuth,getordersstate)
+orders.get("/order/:id/full",userAuth,getorderstableservicefulls)
 
-
+orders.get("/order/:id",userAuth,getordersstate)
 orders
 .post("/orderinsert",adminAuth,zValidator("json",order,(result,c)=>{
     if(!result.success){

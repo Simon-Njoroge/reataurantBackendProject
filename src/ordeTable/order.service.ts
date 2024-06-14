@@ -1,6 +1,6 @@
 import { eq } from "drizzle-orm" 
 import {db} from '../drizzle/db'
-import { ordersTable, TIorder } from "../drizzle/schema"
+import { driverTable, ordersTable, TIorder } from "../drizzle/schema"
 
 export const orderstableservice = async (limit?: number)=>{
     if(limit){
@@ -30,3 +30,24 @@ export const getorderstableservice =async(id: number)=>{
     await db.delete(ordersTable).where(eq(ordersTable.id,id))
     return "deleted successfully"
  }
+
+ export const getorderstableservicefull =async(id: number)=>{
+   return await db.query.ordersTable.findFirst({
+       where: eq(ordersTable.id,id),
+       columns:{
+         restaurantId:true,
+         actualdelivery:true,
+         price:true,
+         restaurant:true
+       },
+       with:{
+         driverTable:{
+            columns:{
+               id:true,
+               order:true,
+               users:true
+            }
+         }
+       }
+   })
+}

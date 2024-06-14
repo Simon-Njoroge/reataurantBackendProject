@@ -252,7 +252,7 @@ export const authrestaurantOwner=pgTable("authonowner",{
     role: roleEnum("role").default("owner")
 })
 
-export const authownerrelation = relations(authrestaurantOwner,({one})=>({
+export const authownerrelations = relations(authrestaurantOwner,({one})=>({
     owner:one(restaurant_owner,{
         fields:[authrestaurantOwner.ownerid],
         references:[restaurant_owner.id]
@@ -280,3 +280,5 @@ export type TSmenuitem = typeof menu_itemTable.$inferSelect
 export type TImenuitem = typeof menu_itemTable.$inferInsert
 export type TIauthresowner =typeof authrestaurantOwner.$inferInsert
 export type TSauthresowner =typeof authrestaurantOwner.$inferSelect
+export type TIuser =typeof usersTable.$inferInsert
+export type TSuser =typeof usersTable.$inferSelect

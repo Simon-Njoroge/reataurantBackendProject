@@ -16,6 +16,7 @@ import{comment} from './commentsTable/comments.router'
 import {category} from './categoryTable/category.router'
 import{authRouter} from './auth/auth.router'
 import{address} from './adressTable/address.router'
+import {users} from './users/user.router'
 import {html,raw} from 'hono/html'
 import {verifyToken} from './middleware/bearAuth'
 const app = new Hono()
@@ -46,6 +47,7 @@ app.route("/api",comment)
 app.route("/api/auth",authRouter)
 app.route("/api",category)
 app.route("/api",address)
+app.route("/api",users)
 
 serve({
   fetch: app.fetch,

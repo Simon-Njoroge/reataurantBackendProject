@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { driversservice,getdrverservice,createdriver,updatedriver,deletedriver} from './driver.service'
+import { driversservice,getdrverservice,createdriver,updatedriver,deletedriver,getdrverservicereq} from './driver.service'
 
 export const driverstate = async (c:Context) =>{
     try{
@@ -82,5 +82,22 @@ export const createdrivers = async(c:Context)=>{
         }
         catch(error:any){
             return c.json({err:error?.message},400)
+        }
+    }
+
+    export const getdriverstatereq = async (c:Context) =>{
+        try{
+            const id = parseInt(c.req.param("id"));
+            if(isNaN(id)){
+                return c.text("Invalid id", 400)
+            }
+            const drivd = await  getdrverservicereq (id);
+            if(drivd == null){
+                return c.text("user not found", 404)
+            }
+            return c.json(drivd,200)
+        }
+        catch (err:any){
+            return c.json({err: err?.message},400)
         }
     }

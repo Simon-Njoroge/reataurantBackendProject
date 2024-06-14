@@ -30,3 +30,33 @@ export const createdriver = async(driver: TIdriver)=>{
     await db.delete(driverTable).where(eq(driverTable.id,id))
     return "deleted successfully"
  }
+
+ export const getdrverservicereq =async(id: number)=>{
+    return await db.query.driverTable.findFirst({
+        where: eq(driverTable.id,id),
+        columns:{
+            id: true,
+    
+        instructions: true,
+        user_id: true,
+        city_id: true,
+        online: true,
+        delivering: true,
+        users: true,
+        order: true
+        },
+        with:{
+            orders:{
+                columns:{
+                    id: true,
+                    restaurantId: true,
+                    estimateddelivery: true,
+                    actualdelivery: true,
+                    deliveryAddressId: true,
+                    restaurant: true,
+                    user: true
+                }
+            }
+        }
+    })
+}

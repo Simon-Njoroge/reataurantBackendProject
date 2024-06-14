@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { orderstableservice, getorderstableservice, createorder ,updateorder ,deleteorder} from './order.service'
+import { orderstableservice,getorderstableservicefull, getorderstableservice, createorder ,updateorder ,deleteorder} from './order.service'
 
 export const orderstablestate = async (c:Context) =>{
     try{
@@ -83,5 +83,22 @@ export const createorders = async(c:Context)=>{
         }
         catch(error:any){
             return c.json({err:error?.message},400)
+        }
+    }
+
+    export const getorderstableservicefulls = async (c:Context) =>{
+        try{
+            const id = parseInt(c.req.param("id"));
+            if(isNaN(id)){
+                return c.text("Invalid id", 400)
+            }
+            const addressfull = await getorderstableservice(id);
+            if(addressfull == null){
+                return c.text("user not found", 404)
+            }
+            return c.json(addressfull,200)
+        }
+        catch (err:any){
+            return c.json({err: err?.message},400)
         }
     }

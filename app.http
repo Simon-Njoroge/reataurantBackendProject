@@ -1,28 +1,35 @@
-GET http://localhost:3000/running
+GET http://localhost:8000/running
 
 ###
-GET http://localhost:3000/
+GET http://localhost:8000/
 
 ###
 
-GET http://localhost:3000/api/owner
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODIxMDMzMH0.fbuNJmgYhD9Aj6tDsO-iWjkcRNMaHjyjeRhSBPKBqio
+GET http://localhost:8000/api/owner
+Authorization: eyJhbGcjfhfjriOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
+###
+
+GET http://localhost:8000/api/owner/6
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJzaW1vbiIsInJvbGUiOiJvd25lciIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI4OTk0Nn0.2HwLCMM3AdNY8tHd3QbPKTsoASAoVyz3-Fm-FcCOMfg
+###
+GET http://localhost:8000/api/owner/6/full
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJzaW1vbiIsInJvbGUiOiJvd25lciIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI4OTk0Nn0.2HwLCMM3AdNY8tHd3QbPKTsoASAoVyz3-Fm-FcCOMfg
 
 ###
-POST  http://localhost:3000/api/ownerinsert
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODIxMDMzMH0.fbuNJmgYhD9Aj6tDsO-iWjkcRNMaHjyjeRhSBPKBqio
+POST  http://localhost:8000/api/ownerinsert
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
 Content-Type: application/json
 
  {
-    "id": 7,
-    "restaurant_id": 2,
+    "id": 5,
+    "restaurant_id": 1,
     "owner_id": 1,
     "users": "JANE",
     "restaurant": "CLIFNECK"
   }
 ###
-PUT   http://localhost:3000/api/ownerupdate/5
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODE4NzUzN30.TNnDlZ5EWu_QFlB2yG9yLQmCJQps-PG_mwYoDEGZbS0
+PUT   http://localhost:8000/api/ownerupdate/5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
 Content-Type: application/json
 
  {
@@ -34,8 +41,8 @@ Content-Type: application/json
   }
 
 ###
-DELETE  http://localhost:3000/api/ownerdelete/5
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODE4NzUzN30.TNnDlZ5EWu_QFlB2yG9yLQmCJQps-PG_mwYoDEGZbS0
+DELETE  http://localhost:8000/api/ownerdelete/5
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
 Content-Type: application/json
 
  {
@@ -46,19 +53,24 @@ Content-Type: application/json
     "restaurant": "CLIFNECK"
   }
 ###
-GET http://localhost:3000/api/order
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODIxMDMzMH0.fbuNJmgYhD9Aj6tDsO-iWjkcRNMaHjyjeRhSBPKBqio
+GET http://localhost:8000/api/order
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
 
 ###
-GET http://localhost:3000/api/order/1
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJzaW1vbiIsInJvbGUiOiJvd25lciIsIm93bmVyaWQiOjEsImV4cCI6MTcxODIxMDIxNn0.PNMJESThkiWCSVFel_eXnzgtSgQzGxVYkwjHJmBD4cI
+GET http://localhost:8000/api/order/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJzaW1vbiIsInJvbGUiOiJvd25lciIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI4OTk0Nn0.2HwLCMM3AdNY8tHd3QbPKTsoASAoVyz3-Fm-FcCOMfg
+
 ###
-POST  http://localhost:3000/api/orderinsert
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODIwMDUwMH0.iV-j_TN7awe8Z1JJ-Ps-_bMupA1Rms-w-gjE4cnTiLk
+GET http://localhost:8000/api/order/1/full
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJzaW1vbiIsInJvbGUiOiJvd25lciIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI4OTk0Nn0.2HwLCMM3AdNY8tHd3QbPKTsoASAoVyz3-Fm-FcCOMfg
+
+###
+POST  http://localhost:8000/api/orderinsert
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI4MDMwNH0.3yIa4MQPJmg9sRoaeEWXCb2J4EA75n2JeoqxAOffUfU
 Content-Type: application/json
 
  {
-    "id": 2,
+    "id": 1,
     "restaurantId": 1,
     "statusCatalogId": 1,
     "estimateddelivery": "2023",
@@ -82,7 +94,7 @@ Content-Type: application/json
  
 
 ###
-PUT   http://localhost:3000/api/orderupdate/4
+PUT   http://localhost:8000/api/orderupdate/4
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODE4NzUzN30.TNnDlZ5EWu_QFlB2yG9yLQmCJQps-PG_mwYoDEGZbS0
 Content-Type: application/json
 
@@ -108,16 +120,24 @@ Content-Type: application/json
     "restaurant": "MAANET",
     "user": "JOYCE"
   }
+
 ###
-GET http://localhost:3000/api/menuitem
+GET http://localhost:8000/api/user
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
+
+###
+GET http://localhost:8000/api/user/1/full
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJzaW1vbiIsInJvbGUiOiJvd25lciIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI4OTk0Nn0.2HwLCMM3AdNY8tHd3QbPKTsoASAoVyz3-Fm-FcCOMfg
+###
+GET http://localhost:8000/api/menuitem
 Authorization: 
 
 
 ###
-GET http://localhost:3000/api/menuitem/1
+GET http://localhost:8000/api/menuitem/1
 Authorization: 
 ###
-POST http://localhost:3000/api/menuinsert
+POST http://localhost:8000/api/menuinsert
 Authorization: 
 Content-Type: application/json
 
@@ -134,7 +154,7 @@ Content-Type: application/json
 }
  
 ###
-PUT http://localhost:3000/api/menuupdate/1
+PUT http://localhost:8000/api/menuupdate/1
 Authorization: 
 Content-Type: application/json
 
@@ -152,15 +172,15 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/api/menu
+GET http://localhost:8000/api/menu
 Authorization: 
 
 ###
-GET http://localhost:3000/api/menu/1
+GET http://localhost:8000/api/menu/1
 Authorization: 
 
 ###
-POST  http://localhost:3000/api/iteminsert
+POST  http://localhost:8000/api/iteminsert
 Authorization: 
 Content-Type: application/json
 
@@ -180,7 +200,7 @@ Content-Type: application/json
   }
 
 ###
-PUT   http://localhost:3000/api/updateitem/3
+PUT   http://localhost:8000/api/updateitem/3
 Authorization: 
 Content-Type: application/json
 
@@ -199,15 +219,17 @@ Content-Type: application/json
     "orderMenu": "ORDERED"
   }
 ###
-GET http://localhost:3000/api/driver
-Authorization: iJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqb3ljZSIsInJvbGUiOiJkcml2ZXIiLCJvd25lcmlkIjoxLCJleHAiOjE3MTgyMTA4NjF9.rtAdC_MwZIoTBRoNuZFFYUvonTCnHuVeXVmQLrvoYGo
-
+GET http://localhost:8000/api/driver
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqb3ljZSIsInJvbGUiOiJkcml2ZXIiLCJvd25lcmlkIjoxLCJleHAiOjE3MTgyODk4NTV9.W91wPAYxtAJ58ZGEZIAzcFM2r5Qa-uzCQG8GNedmpSo
 ###
-GET http://localhost:3000/api/driver/2
+GET http://localhost:8000/api/driver/2
+Authorization: 
+###
+GET http://localhost:8000/api/driver/2/req
 Authorization: 
 
 ###
-POST  http://localhost:3000/api/driverinsert
+POST  http://localhost:8000/api/driverinsert
 Authorization: 
 Content-Type: application/json
 
@@ -227,7 +249,7 @@ Content-Type: application/json
     "order": "Three"
   }
 ###
-PUT   http://localhost:3000/api/updatedriver/5
+PUT   http://localhost:8000/api/updatedriver/5
 Authorization: 
 Content-Type: application/json
 
@@ -248,26 +270,26 @@ Content-Type: application/json
   }
 
   ###
-DELETE   http://localhost:3000/api/updatedriver/5
+DELETE   http://localhost:8000/api/updatedriver/5
 Authorization: 
 Content-Type: application/json
 ###
-GET http://localhost:3000/api/time
+GET http://localhost:8000/api/time
 
 ###
-http://localhost:3000/api/time
+http://localhost:8000/api/time
 
 
 ###
-GET http://localhost:3000/api/city
+GET http://localhost:8000/api/city
 Authorization: 
 
 ###
-GET http://localhost:3000/api/city/1
+GET http://localhost:8000/api/city/1
 Authorization: 
 
 ###
-POST http://localhost:3000/api/cityinsert
+POST http://localhost:8000/api/cityinsert
 Authorization: 
 Content-Type: application/json
 
@@ -281,7 +303,7 @@ Content-Type: application/json
 }
 
 ###
-PUT  http://localhost:3000/api/cityupdate/4
+PUT  http://localhost:8000/api/cityupdate/4
 Authorization: 
 Content-Type: application/json
 
@@ -295,20 +317,20 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/api/cityupdate/4
+DELETE http://localhost:8000/api/cityupdate/4
 Authorization: 
 Content-Type: application/json
 
 ###
-GET http://localhost:3000/api/comment
+GET http://localhost:8000/api/comment
 Authorization: 
 
 ###
-GET http://localhost:3000/api/comment/1
+GET http://localhost:8000/api/comment/1
 Authorization: 
 
 ###
-POST http://localhost:3000/api/commentinsert
+POST http://localhost:8000/api/commentinsert
 Authorization: 
 Content-Type: application/json
 
@@ -327,7 +349,7 @@ Content-Type: application/json
 
 
 ###
-PUT  http://localhost:3000/api/comment/2
+PUT  http://localhost:8000/api/comment/2
 Authorization: 
 Content-Type: application/json
 
@@ -344,20 +366,20 @@ Content-Type: application/json
     "order": "car"
   }
 ###
-DELETE http://localhost:3000/api/comment/2
+DELETE http://localhost:8000/api/comment/2
 Authorization: 
 Content-Type: application/json
 
 ###
-GET http://localhost:3000/api/category
+GET http://localhost:8000/api/category
 Authorization: 
 
 ###
-GET http://localhost:3000/api/category/1
+GET http://localhost:8000/api/category/1
 Authorization: 
 
 ###
-POST http://localhost:3000/api/categoryinsert
+POST http://localhost:8000/api/categoryinsert
 Authorization: 
 Content-Type: application/json
 
@@ -368,7 +390,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3000/api/categoryupdate/3
+PUT http://localhost:8000/api/categoryupdate/3
 Authorization: 
 Content-Type: application/json
 
@@ -379,22 +401,22 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:3000/api/categorydelete/3
+DELETE  http://localhost:8000/api/categorydelete/3
 Authorization: 
 Content-Type: application/json
 
 ###
-GET http://localhost:3000/api/address
+GET http://localhost:8000/api/address
 Authorization: 
 
 
 ###
-GET http://localhost:3000/api/address/1
+GET http://localhost:8000/api/address/1
 Authorization: 
 
 
 ###
-POST  http://localhost:3000/api/addressinsert
+POST  http://localhost:8000/api/addressinsert
 Authorization: 
 Content-Type: application/json
 
@@ -414,7 +436,7 @@ Content-Type: application/json
 }
 
 ###
-PUT  http://localhost:3000/api/addressupdate/1
+PUT  http://localhost:8000/api/addressupdate/1
 Authorization: 
 Content-Type: application/json
 
@@ -435,12 +457,12 @@ Content-Type: application/json
 }
 
 ###
-DELETE  http://localhost:3000/api/addressdelete/1
+DELETE  http://localhost:8000/api/addressdelete/1
 Authorization:
 
 
 ###
-POST  http://localhost:3000/api/auth/register
+POST  http://localhost:8000/api/auth/register
 Content-Type: application/json
 
 {
@@ -451,10 +473,10 @@ Content-Type: application/json
 }
 
 ###
-POST  http://localhost:3000/api/auth/login
+POST  http://localhost:8000/api/auth/login
 Content-Type: application/json
 
 {
-   "ownername": "joyce",
+   "ownername": "james",
    "password": "owner"
 }

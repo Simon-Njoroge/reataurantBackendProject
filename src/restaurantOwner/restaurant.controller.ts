@@ -1,5 +1,6 @@
 import { Context } from "hono";
-import { restaurantownerservice, getrestaurantownerservice,createowner, updateowner,deleteowner } from './restaurant.service'
+ 
+    import { restaurantownerservice,getrestaurantownerfull, getrestaurantownerservice,createowner, updateowner,deleteowner } from './restaurant.service'
 
 export const restaurantownerstate = async (c:Context) =>{
     try{
@@ -83,5 +84,22 @@ export const deleteresowner = async(c:Context)=>{
     }
     catch(error:any){
         return c.json({err:error?.message},400)
+    }
+}
+
+export const getrestaurantownerfulls = async (c:Context) =>{
+    try{
+        const id = parseInt(c.req.param("id"));
+        if(isNaN(id)){
+            return c.text("Invalid id", 400)
+        }
+        const fulldetails = await getrestaurantownerfull(id);
+        if(fulldetails == null){
+            return c.text("user not found", 404)
+        }
+        return c.json(fulldetails,200)
+    }
+    catch (err:any){
+        return c.json({err: err?.message},400)
     }
 }

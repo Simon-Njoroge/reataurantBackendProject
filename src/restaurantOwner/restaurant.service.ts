@@ -1,6 +1,6 @@
-import { eq } from "drizzle-orm" 
+import { Column, eq } from "drizzle-orm" 
 import {db} from '../drizzle/db'
-import { restaurant_owner , TIrestaurantowner} from "../drizzle/schema"
+import { restaurant_owner , restaurantTable, TIrestaurantowner} from "../drizzle/schema"
 
 export const restaurantownerservice = async (limit?:  number) => {
  if(limit){
@@ -29,3 +29,17 @@ export const restaurantownerservice = async (limit?:  number) => {
     await db.delete(restaurant_owner).where(eq(restaurant_owner.id,id))
     return "deleted successfully"
  }
+
+ export const getrestaurantownerfull =async(id: number)=>{
+   return await db.query.restaurant_owner.findFirst({
+       where: eq(restaurant_owner.id,id),
+       columns:{
+         restaurant_id: true,
+         owner_id: true,
+         users: true,
+         restaurant: true
+       },
+    
+   })
+ 
+}  
