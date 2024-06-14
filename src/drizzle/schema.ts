@@ -243,6 +243,9 @@ export const ordersrelations = relations(ordersTable,({one,many})=>({
     order:many(orderStatusTable)
 }))
 
+
+
+
 export const roleEnum =pgEnum("role",["admin","owner","driver","chef"])
 export const authrestaurantOwner=pgTable("authonowner",{
     id:serial("id").primaryKey(),
