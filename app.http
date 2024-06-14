@@ -58,7 +58,13 @@ PUT   http://localhost:8000/api/orderupdate/4
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODE4NzUzN30.TNnDlZ5EWu_QFlB2yG9yLQmCJQps-PG_mwYoDEGZbS0
 Content-Type: application/json
 
+###
+POST  http://localhost:8000/api/user/insert
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
 
+###
+PUT http://localhost:8000/api/userupdate/1
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
 
 ###
 GET http://localhost:8000/api/user

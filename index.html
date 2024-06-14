@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: aqua;
+            margin: 1em 2em;
+        }
+        .navbar ul{
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+            justify-content: right;
+        }
+        .navbar ul li{
+            list-style-type: none;
+
+
+        }
+        .navbar ul li a{
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .navbar ul li a:hover{
+            color: red;
+            border-bottom: 1px solid red;
+            transition: color 0.5s ;
+            font-style: italic;
+        
+        }
+        
+        .use{
+            display: none;
+
+            border-radius: 10px; 
+            padding: 20px;
+        }
+        .use ul li a{
+         text-decoration: none;
+         color: black;
+         padding: 10px;
+        }
+        .navbar ul li:hover .use{
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            background-color: rgba(red, green, blue, 0.1);
+
+        }
+        .navbar ul li:hover .use ul{
+            display: flex;
+            flex-direction: column;
+            background-color: beige;
+           
+        }
+        .personaldetails{
+         text-align: center;
+         margin-top: 2em;
+         padding: 10px;
+         background-color: white;
+         color: black;
+         font-size: 2em;
+         line-height: 1em;
+         border-radius: 10px;
+        }
+        .personaldetails p:hover{
+         cursor: pointer;
+         color: aqua;
+         font-style: oblique;
+        }
+        .img {
+            margin: 1em 35em;
+            width: 50%;
+            height: 50%;
+        }
+        p marquee{
+            background-color: bisque;
+            padding: 10px 0px;
+            font-size: 20px;
+            
+        }
+       
+    </style>
+</head>
+<body>
+    <p><marquee behavior="" direction="scroll">- - - - - the server is running - - - - -</marquee></p>
+    <div class="navbar">
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="">users </a>
+                <div class="use">
+                <ul class>
+                    <li><a href="https://restaurantbackendapp.azurewebsites.net/api/user" target="_self">users</a></li>
+                    <li><a href="">create</a></li>
+                    <li><a href="">update</a></li>
+                    <li><a href="">delete</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="">resowner</a>
+                <div class="use">
+                    <ul class>
+                        <li><a href="https://restaurantbackendapp.azurewebsites.net/api/owner">owner</a></li>
+                        <li><a href="">create</a></li>
+                        <li><a href="">update</a></li>
+                        <li><a href="">delete</a></li>
+                        </ul>
+                    </div>
+            </li>
+            <li><a href="">order</a>
+                <div class="use">
+                    <ul class>
+                        <li><a href="https://restaurantbackendapp.azurewebsites.net/api/order">order</a></li>
+                        <li><a href="">create</a></li>
+                        <li><a href="">update</a></li>
+                        <li><a href="">delete</a></li>
+                        </ul>
+                    </div>
+            </li>
+            <li><a href="">ordersstatus</a>
+                <div class="use">
+                    <ul class>
+                        <li><a href="">orderstatus</a></li>
+                        <li><a href="">create</a></li>
+                        <li><a href="">update</a></li>
+                        <li><a href="">delete</a></li>
+                        </ul>
+                    </div>
+            </li>
+            <li><a href="">ordermenu</a>
+                <div class="use">
+                    <ul class>
+                        <li><a href="https://restaurantbackendapp.azurewebsites.net/api/menuitem">ordermenu</a></li>
+                        <li><a href="">create</a></li>
+                        <li><a href="">update</a></li>
+                        <li><a href="">delete</a></li>
+                        </ul>
+                    </div>
+            </li>
+            <li><a href="">menuitem</a>
+                <div class="use">
+                    <ul class>
+                        <li><a href="https://restaurantbackendapp.azurewebsites.net/api/menuitem">menuitem</a></li>
+                        <li><a href="">create</a></li>
+                        <li><a href="">update</a></li>
+                        <li><a href="">delete</a></li>
+                        </ul>
+                    </div>
+            </li>
+            <li><a href="">driver</a>
+                <div class="use">
+                    <ul class>
+                        <li><a href="https://restaurantbackendapp.azurewebsites.net/api/driver">driver</a></li>
+                        <li><a href="">create</a></li>
+                        <li><a href="">update</a></li>
+                        <li><a href="">delete</a></li>
+                        </ul>
+                    </div>
+            </li>
+            <li><a href="">comments</a>
+                <div class="use">
+                    <ul class>
+                        <li><a href="https://restaurantbackendapp.azurewebsites.net/api/comment">comments</a></li>
+                        <li><a href="">create</a></li>
+                        <li><a href="">update</a></li>
+                        <li><a href="">delete</a></li>
+                        </ul>
+                    </div>
+            </li>
+            <li><a href="">city</a>
+                <div class="use">
+                    <ul class>
+                        <li><a href="https://restaurantbackendapp.azurewebsites.net/api/city">city</a></li>
+                        <li><a href="">create</a></li>
+                        <li><a href="">update</a></li>
+                        <li><a href="">delete</a></li>
+                        </ul>
+                    </div>
+            </li>
+            <li><a href="">category</a>
+                <div class="use">
+                    <ul class>
+                        <li><a href="https://restaurantbackendapp.azurewebsites.net/api/city">category</a></li>
+                        <li><a href="">create</a></li>
+                        <li><a href="">update</a></li>
+                        <li><a href="">delete</a></li>
+                        </ul>
+                    </div>
+            </li>
+            <li><a href="">address</a>
+                <div class="use">
+                    <ul class>
+                        <li><a href="https://restaurantbackendapp.azurewebsites.net/api/address">users</a></li>
+                        <li><a href="">create</a></li>
+                        <li><a href="">update</a></li>
+                        <li><a href="">delete</a></li>
+                        </ul>
+                    </div>
+            </li>
+        </ul>
+        <div class="personaldetails">
+            <p>SIMON NJOROGE</p>
+            <P>RESTAURANT API</P>
+            <P>THE API IS RUNNING</P>
+        </div>
+    </div>
+    <div class="img">
+        <img src="./onboard.jpg" alt="">
+    </div>
+</body>
+</html>

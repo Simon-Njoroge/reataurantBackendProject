@@ -18,6 +18,6 @@ users
     }
 }),createusers)
 
-users.put("/ownerupdate/:id",adminAuth,updateusers)
+users.put("/userupdate/:id",adminAuth,updateusers)
 
-users.delete("/ownerdelete/:id",adminAuth,deleteusers)
+users.delete("/userdelete/:id",adminAuth,deleteusers)

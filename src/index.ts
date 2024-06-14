@@ -17,21 +17,24 @@ import {category} from './categoryTable/category.router'
 import{authRouter} from './auth/auth.router'
 import{address} from './adressTable/address.router'
 import {users} from './users/user.router'
-import {html,raw} from 'hono/html'
 import {verifyToken} from './middleware/bearAuth'
+import { readFileSync } from 'fs'
 const app = new Hono()
 app.use(logger())
 app.use(csrf())
 app.use(trimTrailingSlash())
 app.use('/api/time',timeout(5000))
-app.get('/', (c) => {
-  return c.json({message:"server is running ..."},200)
+
+app.get('/', async (c)=>{
+  try{
+    let html =readFileSync('./index.html', "utf-8");
+    return c.html(html);
+  }catch(error: any){
+    return c.json ({error: error.message, status:500})
+  }
 })
-app.get("/running",(c)=>{
-  return c.html(html`<h1>***SERVER IS RUNNING***</h1>
-<img src="./onboard.jpg" alt="">
-<p><i>utilise the resources provided</i></p>`)
-})
+
+
 app.get('/api/time', async(c)=>{
   await setTimeout(()=>{
     console.log("hello hono this is simon")
