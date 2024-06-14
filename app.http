@@ -20,38 +20,20 @@ POST  http://localhost:8000/api/ownerinsert
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
 Content-Type: application/json
 
- {
-    "id": 5,
-    "restaurant_id": 1,
-    "owner_id": 1,
-    "users": "JANE",
-    "restaurant": "CLIFNECK"
-  }
+
 ###
 PUT   http://localhost:8000/api/ownerupdate/5
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
 Content-Type: application/json
 
- {
-    "id": 5,
-    "restaurant_id": 1,
-    "owner_id": 1,
-    "users": "JANE NJOROGE",
-    "restaurant": "CLIFNECK"
-  }
+
 
 ###
 DELETE  http://localhost:8000/api/ownerdelete/5
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
 Content-Type: application/json
 
- {
-    "id": 5,
-    "restaurant_id": 1,
-    "owner_id": 1,
-    "users": "JANE NJOROGE",
-    "restaurant": "CLIFNECK"
-  }
+
 ###
 GET http://localhost:8000/api/order
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
@@ -69,28 +51,6 @@ POST  http://localhost:8000/api/orderinsert
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI4MDMwNH0.3yIa4MQPJmg9sRoaeEWXCb2J4EA75n2JeoqxAOffUfU
 Content-Type: application/json
 
- {
-    "id": 1,
-    "restaurantId": 1,
-    "statusCatalogId": 1,
-    "estimateddelivery": "2023",
-    "actualdelivery": "2024-04-04",
-    "deliveryAddressId": 1,
-    "userId": 1,
-    "driverId": 4,
-    "price": "1000",
-    "discount": "100",
-    "finalPrice": "900",
-    "created_at": "2016-03-06",
-    "updated_at": "2024-04-02",
-    "comment": "good",
-    "orderMenuItem": "🥞 pancakes",
-    "orderStatus": "good",
-    "address": "433",
-    "driver": "simon",
-    "restaurant": "bekam",
-    "user": "jane"
-  }
  
 
 ###
@@ -98,28 +58,7 @@ PUT   http://localhost:8000/api/orderupdate/4
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODE4NzUzN30.TNnDlZ5EWu_QFlB2yG9yLQmCJQps-PG_mwYoDEGZbS0
 Content-Type: application/json
 
-  {
-    "id": 4,
-    "restaurantId": 2,
-    "statusCatalogId": 1,
-    "estimateddelivery": "2024-04-04",
-    "actualdelivery": "2024-04-04",
-    "deliveryAddressId": 1,
-    "userId": 1,
-    "driverId": 1,
-    "price": "100",
-    "discount": "10",
-    "finalPrice": "90",
-    "created_at": "2018-02-02",
-    "updated_at": "2019-02-02",
-    "comment": "GOOD",
-    "orderMenuItem": "CARS",
-    "orderStatus": "GOOD",
-    "address": "433",
-    "driver": "BRIAN",
-    "restaurant": "MAANET",
-    "user": "JOYCE"
-  }
+
 
 ###
 GET http://localhost:8000/api/user
@@ -141,17 +80,6 @@ POST http://localhost:8000/api/menuinsert
 Authorization: 
 Content-Type: application/json
 
-{
-  "id": 2,
-  "orderId": 4,
-  "menuItemid": 1,
-  "quantity": 1,
-  "itemPrice": "20000",
-  "price": "10000",
-  "comment": "GOOD",
-  "menuItem": "githeri",
-  "order": "ONE"
-}
  
 ###
 PUT http://localhost:8000/api/menuupdate/1
@@ -159,17 +87,7 @@ Authorization:
 Content-Type: application/json
 
  
-{
-  "id": 2,
-  "orderId": 4,
-  "menuItemid": 1,
-  "quantity": 1,
-  "itemPrice": "20000",
-  "price": "10000",
-  "comment": "GOOD",
-  "menuItem": "githeri",
-  "order": "two"
-}
+
 
 ###
 GET http://localhost:8000/api/menu
@@ -184,40 +102,14 @@ POST  http://localhost:8000/api/iteminsert
 Authorization: 
 Content-Type: application/json
 
- {
-    "id": 4,
-    "restaurantid": 1,
-    "categoryid": 1,
-    "descriptions": "BENZ",
-    "ingredients": "MERCEDES",
-    "price": "1000000",
-    "active": true,
-    "created_at": "2014-01-12T00:00:00.000Z",
-    "updated_at": "2018-04-04T00:00:00.000Z",
-    "category": "CAR",
-    "restaurant": "MAANET",
-    "orderMenu": "ORDERED"
-  }
+
 
 ###
 PUT   http://localhost:8000/api/updateitem/3
 Authorization: 
 Content-Type: application/json
 
- {
-    "id": 3,
-    "restaurantid": 1,
-    "categoryid": 1,
-    "descriptions": "BENZ",
-    "ingredients": "MERCEDES",
-    "price": "10000000",
-    "active": true,
-    "created_at": "2014-01-12T00:00:00.000Z",
-    "updated_at": "2018-04-04T00:00:00.000Z",
-    "category": "CAR",
-    "restaurant": "MAANET",
-    "orderMenu": "ORDERED"
-  }
+
 ###
 GET http://localhost:8000/api/driver
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqb3ljZSIsInJvbGUiOiJkcml2ZXIiLCJvd25lcmlkIjoxLCJleHAiOjE3MTgyODk4NTV9.W91wPAYxtAJ58ZGEZIAzcFM2r5Qa-uzCQG8GNedmpSo
@@ -233,41 +125,12 @@ POST  http://localhost:8000/api/driverinsert
 Authorization: 
 Content-Type: application/json
 
-{
-  "id": 6,
-    "carMake": "toyota",
-    "carModel": "prado",
-    "carYear": "2030",
-    "instructions": "logboook",
-    "user_id": 1,
-    "city_id": 2,
-    "online": "true",
-    "delivering": "2035",
-    "created_at": "2022-04-11",
-    "updated_at": "2024-04-03",
-    "users": "SONITAH",
-    "order": "Three"
-  }
 ###
 PUT   http://localhost:8000/api/updatedriver/5
 Authorization: 
 Content-Type: application/json
 
-{
-  "id": 5,
-    "carMake": "toyota",
-    "carModel": "prado tx",
-    "carYear": "2030",
-    "instructions": "logboook",
-    "user_id": 1,
-    "city_id": 2,
-    "online": "true",
-    "delivering": "2035",
-    "created_at": "2022-04-11",
-    "updated_at": "2024-04-03",
-    "users": "SONITAH",
-    "order": "Three"
-  }
+
 
   ###
 DELETE   http://localhost:8000/api/updatedriver/5
@@ -293,28 +156,15 @@ POST http://localhost:8000/api/cityinsert
 Authorization: 
 Content-Type: application/json
 
-{
-  "cityid": 4,
-  "cityname": "mombasa",
-  "state_id": 1,
-  "address": "456",
-  "state": "watamu",
-  "restaurant": "gecko"
-}
+
 
 ###
 PUT  http://localhost:8000/api/cityupdate/4
 Authorization: 
 Content-Type: application/json
 
-{
-  "cityid": 4,
-  "cityname": "Kilifi",
-  "state_id": 1,
-  "address": "456",
-  "state": "watamu",
-  "restaurant": "gecko"
-}
+
+
 
 ###
 DELETE http://localhost:8000/api/cityupdate/4
@@ -334,18 +184,6 @@ POST http://localhost:8000/api/commentinsert
 Authorization: 
 Content-Type: application/json
 
-{
-    "id": 2,
-    "orderid": 1,
-    "userid": 1,
-    "comments": "mercedes",
-    "complaint": "mercedes",
-    "praise": "2025",
-    "created_at": "2018-01-12",
-    "updated_at": "2024-02-02",
-    "users": "jane",
-    "order": "car"
-  }
 
 
 ###
@@ -353,18 +191,6 @@ PUT  http://localhost:8000/api/comment/2
 Authorization: 
 Content-Type: application/json
 
-{
-    "id": 2,
-    "orderid": 1,
-    "userid": 1,
-    "comments": "Good",
-    "complaint": "mercedes",
-    "praise": "2025",
-    "created_at": "2018-01-12",
-    "updated_at": "2024-02-02",
-    "users": "jane",
-    "order": "car"
-  }
 ###
 DELETE http://localhost:8000/api/comment/2
 Authorization: 
@@ -383,22 +209,14 @@ POST http://localhost:8000/api/categoryinsert
 Authorization: 
 Content-Type: application/json
 
-{
-  "id": 3,
-  "name": "VEGITABLES",
-  "menuItem": "KALES"
-}
+
 
 ###
 PUT http://localhost:8000/api/categoryupdate/3
 Authorization: 
 Content-Type: application/json
 
-{
-  "id": 3,
-  "name": "VEGITABLES",
-  "menuItem": "SPINACH"
-}
+
 
 ###
 DELETE  http://localhost:8000/api/categorydelete/3
@@ -420,20 +238,6 @@ POST  http://localhost:8000/api/addressinsert
 Authorization: 
 Content-Type: application/json
 
-{
-  "id": 1,
-  "address1": "400",
-  "address2": "435",
-  "zip_code": "900",
-  "instructions": "PLEASE DELIVER",
-  "user_id": "1",
-  "city_id": 2,
-  "created_at": "2018-12-12",
-  "updated_at": "2023-12-03",
-  "city": "NANDI",
-  "users": "PHILIP DOE",
-  "order": "FOUR"
-}
 
 ###
 PUT  http://localhost:8000/api/addressupdate/1
@@ -441,20 +245,6 @@ Authorization:
 Content-Type: application/json
 
 
-{
-  "id": 1,
-  "address1": "400",
-  "address2": "433",
-  "zip_code": "900",
-  "instructions": "PLEASE DELIVER PLEASE",
-  "user_id": "1",
-  "city_id": 2,
-  "created_at": "2018-12-12",
-  "updated_at": "2023-12-03",
-  "city": "KIAMBU",
-  "users": "SIMON DOE",
-  "order": "ONE"
-}
 
 ###
 DELETE  http://localhost:8000/api/addressdelete/1
