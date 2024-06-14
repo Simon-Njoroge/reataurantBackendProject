@@ -51,7 +51,7 @@ app.route("/api",users)
 
 serve({
   fetch: app.fetch,
-  port: 8000
+  port: Number(process.env.PORT)
 })
 console.log(`Server is running on port ${process.env.PORT}`)
 
