@@ -28,9 +28,9 @@ app.get('/', (c) => {
   return c.json({message:"server is running ..."},200)
 })
 app.get("/running",(c)=>{
-  return c.html(html`<h1>OUR SERVER IS RUNNING</h1>
-<p>Server is running on port 3000</p>
-<P><i>use the resources provided</i></P>`)
+  return c.html(html`<h1>***SERVER IS RUNNING***</h1>
+<img src="./onboard.jpg" alt="">
+<p><i>utilise the resources provided</i></p>`)
 })
 app.get('/api/time', async(c)=>{
   await setTimeout(()=>{
