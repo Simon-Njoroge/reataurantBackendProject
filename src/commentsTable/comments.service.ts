@@ -12,7 +12,12 @@ export const commentservice = async (limit?: number)=>{
 }
 export const getcommentservice =async(id: number)=>{
     return await db.query.commentsTable.findFirst({
-        where: eq(commentsTable.id,id)
+        where: eq(commentsTable.id,id),
+        columns:{
+         comments:true,
+         complaint:true,
+         praise:true
+        }
     })
  }
 

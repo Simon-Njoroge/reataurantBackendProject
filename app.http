@@ -6,7 +6,7 @@ GET http://localhost:8000/
 ###
 
 GET http://localhost:8000/api/owner
-Authorization: eyJhbGcjfhfjriOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODI5MDE2N30.UsWajnggtrVdUi4UR4HeL0BYjSiSXatehpwhSj4cD-I
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJvd25lcm5hbWUiOiJqYW1lcyIsInJvbGUiOiJhZG1pbiIsIm93bmVyaWQiOjEsImV4cCI6MTcxODcxOTAzOX0.33sp-baGTm6BJqY3h0NiciP301KTrwEVzbpUIiAizwg
 ###
 
 GET http://localhost:8000/api/owner/6
@@ -154,7 +154,7 @@ GET http://localhost:8000/api/city
 Authorization: 
 
 ###
-GET http://localhost:8000/api/city/1
+GET http://localhost:8000/api/city/2
 Authorization: 
 
 ###
@@ -182,7 +182,7 @@ GET http://localhost:8000/api/comment
 Authorization: 
 
 ###
-GET http://localhost:8000/api/comment/1
+GET http://localhost:8000/api/comment/3
 Authorization: 
 
 ###

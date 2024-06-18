@@ -12,7 +12,12 @@ export const addressservice = async (limit?: number)=>{
 }
 export const getaddressservice =async(id: number)=>{
     return await db.query.addressTable.findFirst({
-        where: eq(addressTable.id,id)
+        where: eq(addressTable.id,id),
+        columns:{
+         address1:true,
+         address2:true,
+         zip_code:true,
+        }
     })
  }
 

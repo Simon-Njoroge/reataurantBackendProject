@@ -12,7 +12,11 @@ export const cityservice = async (limit?: number)=>{
 }
 export const getcityservice =async(id: number)=>{
     return await db.query.cityTable.findFirst({
-        where: eq(cityTable.cityid,id)
+        where: eq(cityTable.cityid,id),
+        columns:{
+         cityname:true,
+         state:true
+        }
     })
  }
 

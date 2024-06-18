@@ -26,6 +26,7 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/node": "^20.14.2",
+    "@types/pg": "^8.11.6",
     "drizzle-kit": "^0.22.6",
     "tsx": "^4.15.1"
   }

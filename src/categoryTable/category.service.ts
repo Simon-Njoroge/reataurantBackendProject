@@ -12,7 +12,11 @@ export const categortyservice = async (limit?: number) => {
 }
 export const getctgoryservice = async (id: number) => {
    return await db.query.categoryTable.findFirst({
-      where: eq(categoryTable.id, id)
+      where: eq(categoryTable.id, id),
+      columns:{
+         id: true,
+         name:true
+      }
    })
 }
 
